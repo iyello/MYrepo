@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>注册页面</title>
+<link type="text/css" rel="stylesheet" href="main2.css" />
+
+<script type="text/javascript" src="jq/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="jq/hhh.js"></script>
+
+<script language="javascript">
+
+
+//弹出层
+window.onload = function(){
+    var sheight = document.documentElement.scrolllHeight;
+    var swidth = document.documentElement.scrollWidth;
+    var ilogin = document.getElementById("login");
+    var ibutton = document.getElementById("button");
+    var imask = document.getElementById("mask");
+    var iclose = document.getElementById("close");
+
+    var dheight = document.documentElement.clientHeight;
+    var dwidth = document.documentElement.clientWidth;
+
+    function swift(now){
+        var dis;
+        if(now == 1){
+            dis = "block";
+        }
+            else if(now == 2){
+                dis = "none";
+            }
+        ilogin.style.display = dis;
+        imask.style.display = dis;
+        iclose.style.display = dis;
+        imask.style.height = sheight+"px";
+        var jwidth = login.offsetWidth;
+        var jheight = login.offsetHeight;
+        ilogin.style.left = (dwidth-jwidth)/2+"px";
+        ilogin.style.top = (dheight-jheight)/2+"px";
+    }
+
+    ibutton.onclick = function(){
+        swift(1);
+    }
+    iclose.onclick = function(){
+        swift(2); 
+        window.parent.location.reload(); //刷新
+    }
+    imask.onclick = function(){
+        swift(2);
+        window.parent.location.reload();  //刷新
+    }
+
+
+    draw();  //函数调用
+}
+
+
+//鼠标拖拽
+function draw(){
+    function g(id){
+        return document.getElementById(id);
+    }
+    var mouseOffsetX = 0;
+    var mouseOffsetY = 0;
+    var isDragging = false;
+    var X;
+    var Y;
+
+     g('title').addEventListener('mousedown',function(e){
+            var e = e || window.event;
+            mouseOffsetX = e.pageX - g('login').offsetLeft;
+            mouseOffsetY = e.pageY - g('login').offsetTop;
+            isDragging = true;
+    })
+
+    document.onmousemove = function( e ){
+            var e = e || window.event;
+            var mouseX = e.pageX;
+            var mouseY = e.pageY;
+
+            var moveX = 0;
+            var moveY = 0;
+
+        if( isDragging === true ){
+                moveX =  mouseX - mouseOffsetX;
+                moveY = mouseY - mouseOffsetY;
+
+                var pageWidth = document.documentElement.clientWidth;
+                var pageHeight = document.documentElement.clientHeight;
+
+                var loginWidth = g('login').offsetWidth;
+                var loginHeight = g('login').offsetHeight;
+
+                var maxX = pageWidth-loginWidth;
+                var maxY = pageHeight-loginHeight;
+
+                moveX = Math.min( maxX , Math.max(0,moveX) );
+                moveY = Math.min( maxY , Math.max(0,moveY) );
+
+                g('login').style.left = moveX + 'px';
+                g('login').style.top  = moveY + 'px';
+        }
+    }
+
+    document.onmouseup = function(){
+         isDragging = false;
+    }
+}
+
+
+
+//表单验证
+function checkname(){ 
+    var div=document.getElementById("div1");
+    div.innerHTML="";
+    var name1=document.form1.text1.value; 
+    if(name1=="")
+    {
+    	div.innerHTML="姓名不能为空！"; 
+        document.form1.text1.focus(); 
+        return false;
+    }
+
+    if(name1.length<4||name1.length>16)
+    {
+    	div.innerHTML="姓名输入的长度为4-16个字符！"; 
+        document.form1.text1.select();
+        return false; 
+    }
+
+    var charname1=name1.toLowerCase();
+
+    for (var i=0; i<name1.length; i++)
+    { 
+        var charname = charname1.charAt(i); 
+        if (!(charname>=0&&charname<=9)&&(!(charname>='a'&&charname<='z'))&&(charname!='_'))
+        	{
+        		div.innerHTML="姓名包含非法字母，只能包含字母，数字，和下划线"; 
+                document.form1.text1.select(); 
+                return false;
+            } 
+    }
+
+ return true;
+
+}
+
+function checkpassword(){
+	var div=document.getElementById("div2"); 
+    div.innerHTML=""; 
+    var password=document.form1.text2.value; 
+    if (password=="")
+    	{
+    		div.innerHTML = "密码不为空！"; 
+            document.form1.text2.focus();
+            return false; 
+        }
+        if(password.length<4||password.length>12)
+        	{
+        		div.innerHTML = "密码长度为4-12位"; 
+                document.form1.text2.select(); 
+                return false; 
+            }
+
+            return true; 
+}
+
+function checkrepassword(){
+	var div = document.getElementById("div3"); 
+    div.innerHTML = ""; 
+    var password = document.form1.text2.value; 
+    var repass = document.form1.text3.value; 
+    if (repass == "")
+    {
+    	div.innerHTML = "密码不为空！"; 
+        document.form1.text3.focus();
+        return false; 
+}
+    if(password!=repass)
+    {
+    	div.innerHTML="输入密码和确认密码不一致！"; 
+        document.form1.text3.select(); 
+        return false; 
+    }
+    return true;
+}
+
+function checkEmail(){
+	var div = document.getElementById("div4"); 
+    div.innerHTML = "";
+    var email = document.form1.text4.value; 
+    var sw = email.indexOf("@", 0); 
+    if (email == "")
+    	{
+    		div.innerHTML = "电子邮件不能为空！";
+            document.form1.text4.focus(); 
+            return false; 
+        }
+    if(email.indexOf("@", 0)==-1) //从0位置开始查找
+        {
+        	div.innerHTML = "电子邮件格式不正确，必须包含@符号！"; 
+            document.form1.text4.select();
+            return false; 
+        }
+    else{
+    	return true; 
+    }
+
+    return ture; 
+}
+
+function check(){
+	if (checkname() && checkpassword() && checkrepassword() && checkEmail())
+	{
+		return true;
+    }
+    else {
+    	return false; 
+    } 
+} 
+
+</script>
+
+
+
+
+
+</head>
+
+<body>
+    <div id="box">
+        <div id="button">
+            <a href="#" class="link">
+            <span class="icon"></span></a>
+            <a href="#" class="button" data="欢迎注册">
+            <span class="line line-top"></span>
+            <span class="line line-left"></span>
+            <span class="line line-buttom"></span>
+            <span class="line line-right"></span>
+            注册
+            </a>
+        </div>
+    </div>
+
+    <div class="tipf"><em></em><span></span></div>
+    <div class="button2">点这里</div>
+    <div class="tip">WELCOME<span></span></div>
+
+    <div class="button3">点这里
+        <div class="tu1"><span>HELLO</span></div>
+        <div class="tu2"><span>WELCOME</span></div>
+        <div class="tu3"><span>HEY</span></div>
+        <div class="tu4"><span>HAHA</span></div>
+    </div>
+
+    <div class="button4">
+        <div class="t1"></div>
+    </div>
+    
+
+    <div class="boxx">
+        <div class="headerr">
+            <a href="#" class="buttonn btnn1">&lt</a>
+            <span class="titlee">2018—1</span>
+            <a href="#" class="buttonn btnn2">&gt</a>
+        </div>
+        <div class="bodyy">
+            <table>
+                <thead>
+                    <tr>
+                        <th>日</th>
+                        <th>一</th>
+                        <th>二</th>
+                        <th>三</th>
+                        <th>四</th>
+                        <th>五</th>
+                        <th>六</th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                            <th>6</th>
+                        </tr>
+                        <tr>
+                            <th>7</th>
+                            <th>8</th>
+                            <th>9</th>
+                            <th>10</th>
+                            <th>11</th>
+                            <th>12</th>
+                            <th>13</th>
+                        </tr>
+                        <tr>
+                            <th>14</th>
+                            <th>15</th>
+                            <th>16</th>
+                            <th>17</th>
+                            <th>18</th>
+                            <th>19</th>
+                            <th>20</th>
+                        </tr>
+                        <tr>
+                            <th>21</th>
+                            <th>22</th>
+                            <th>23</th>
+                            <th>24</th>
+                            <th>25</th>
+                            <th>26</th>
+                            <th>27</th>
+                        </tr>
+                        <tr>
+                            <th>28</th>
+                            <th>29</th>
+                            <th>30</th>
+                            <th>31</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </tbody>
+
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <div id="mask"></div>
+
+     <form name="form1" method="post" action="2.html" onsubmit="return check()"> 
+        <div id="login">
+            <div id="title"></div>
+            <div id="content">
+                <p id="w1">用户名:</p>
+                <input id="text1" type="text" name="text1" onblur="check()"> 
+                <div id="div1" style="display:inline"></div> 
+                <p id="w1">密码：</p>  
+                <input id="text2" type="password" name="text2" onblur="check()"> 
+                <div id="div2" style="display:inline"></div>
+                <p id="w1">确认密码：</p>
+                <input id="text3" type="password" name="text3" onblur="check()"> 
+                <div id="div3" style="display:inline"></div> 
+                <p id="w1">电子邮件地址：</p>
+                <input id="text4" type="text" name="text4" onblur="check()"> 
+                <div id="div4" style="display:inline"></div> 
+                <div align="center">  
+                    <input type="submit" value="提交" id="text5"><input type="reset" value="重置" id="text6">
+                </div>
+            </div>
+            <div id="close"></div>
+        </div>
+     </form>
+    </div>
+</div>
+</body> 
+</html>

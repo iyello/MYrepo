@@ -1,0 +1,61 @@
+.circle{
+    height:100px;
+    width:100px;
+    background:red;
+    border-radius:50px 50px 50px 50px;
+    box-shadow:0px 8px 9px #666;
+}
+
+.ellipsoid{ 
+    height:50px;
+    width:100px;
+    background:red;
+    border-radius:100%;
+    box-shadow:0px 8px 9px #666;
+}
+.shape31{ 
+    border: 20px solid transparent;
+    border-right: 50px solid red;
+    margin:30px 1920px 0 -13px;
+}
+.shape32{ 
+    height:66px;
+    width:100px;
+    background:red;
+    border-radius:10px 10px 10px 10px;
+    box-shadow:0px 0px 0px #666;
+    margin:-53px 0 0 29px;
+}
+.shape4{
+	width: 0;
+    height: 0;
+    border: 70px solid transparent;
+    border-top: 100px solid red;
+    border-radius:200px 200px 50px 50px;
+}
+.shape5{
+	width: 0;
+    height: 0;
+    border-top: 100px solid red;
+    border-right: 100px solid transparent;
+}
+.shape6{
+	width: 0;
+    height: 0;
+    border: 50px solid transparent;
+    border-left: 100px solid red;
+    border-bottom:50px solid transparent;
+}
+.shape7{
+	background:red;
+	width:100px;
+    height:100px;
+    box-shadow:0px 8px 9px #666;
+}
+.shape8{
+	background:red;
+	width:100px;
+    height:50px;
+    box-shadow:0px 8px 9px #666;
+
+}

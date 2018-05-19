@@ -1,0 +1,474 @@
+*{margin: 0;padding: 0;border:0;}
+body{
+    background:#393936;
+}
+#box{
+    position:relative;
+    width:500px;
+    height:500px;
+    background-color:/*#58bace*/#393936;
+    background-size:798px;
+    background-repeat:no-repeat;
+    background-attachment:scroll;
+    top:100px;
+    left:36%;
+}
+.link .icon{
+    display:inline-block;
+    height:150px;
+    width:100%;
+    background-size:20%;
+    background:url(image/beer.png) no-repeat center center;
+    transition:0.4s ease-out;
+    -moz-transition:0.4s ease-out;
+    -webkit-transition:0.4s ease-out;
+    -o-transition:0.4s ease-out;
+}
+.link .icon:hover{
+    transform:rotate(360deg); scale(1.2);
+    -ms-transform:rotate(360deg); scale(1.2);
+    -moz-transform:rotate(360deg); scale(1.2);
+    -webkit-transform:rotate(360deg); scale(1.2);
+    -o-transform:rotate(360deg); scale(1.2);
+}
+.button{
+    width:162px;
+    height:65px;
+    position:relative;
+    top:60px;
+    left:148px;
+    color:#2DCB70;
+    text-decoration:none;
+    border:2px solid rgba(255,255,255,0.8);
+    cursor:pointer;
+    font-family:"微软雅黑";
+    font-weight:bolder;
+    padding:31px 79px 31px 79px;
+}
+.button:hover{
+    /*color:#58bace;*/
+    background-position:140px center;
+    border:2px solid white;
+
+}
+.button .line{ 
+    position:absolute;
+    display:block;
+    background:none;
+    transition:0.4s ease;
+    -moz-transition:0.4s ease;
+    -webkit-transition:0.4s ease;
+    -o-transition:0.4s ease;
+}
+.button:hover .line{
+    background:white;
+} 
+.button .line-top{
+    height:2px;
+    width:0px;
+    top:-2px;
+    left:-110%;   
+}
+.button:hover .line-top{
+    width:100%;
+    top:-2px;
+    left:0px;
+
+}
+.button .line-right{
+    height:0px;
+    width:2px;
+    top:-110%;
+    left:100%;   
+}
+.button:hover .line-right{
+    height:100%;
+    top:0px;
+    left:100%;
+}
+.button .line-buttom{
+    height:2px;
+    width:0px;
+    top:100%;
+    left:210%;   
+}
+.button:hover .line-buttom{
+    width:100%;
+    top:100%;
+    left:0px;
+}
+.button .line-left{
+    height:0px;
+    width:2px;
+    top:210%;
+    left:-2px;   
+}
+.button:hover .line-left{
+    height:100%;
+    top:0px;
+    left:-2px;
+}
+.tipf{
+    height:50px;
+    width:170px;
+    color:white;
+    font-size:20px;
+    opacity:0;
+    padding:20px 0 0 92px;
+    position:absolute;
+    border-radius:3px;
+    left:796px;
+    background:#2DCB70;
+    opacity:;
+}
+.tipf span{
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border:13px solid transparent;
+    border-top:15px solid #2DCB70;
+    position:absolute;
+    top:70px;
+    left:119px; 
+    
+}
+.button2{
+    width:86px;
+    height:19px;
+    font-family:"微软雅黑";
+    font-weight:bolder;
+    padding:30px 35px 33px 71px;
+    border:2px solid rgba(255,255,255,0.8);
+    position:relative;
+    top:-223px;
+    left:1316px;
+    color:#2DCB70;
+    cursor:pointer;
+}
+.tip{
+    position:absolute;
+    height:50px;
+    width:180px;
+    color:#393936;
+    font-size:0px;
+    padding:20px 0 0 54px;
+    border-radius:3px;
+    top:289px;
+    left:1316px;
+    transition:0.5s ease;
+    -moz-transition:0.5s ease;
+    -webkit-transition:0.5s ease;
+    -o-transition:0.5s ease;
+}
+.tip span{
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border:13px solid transparent;
+    position:absolute;
+    top:70px;
+    left:103px;
+    transition:0.5s ease;
+    -moz-transition:0.5s ease;
+    -webkit-transition:0.5s ease;
+    -o-transition:0.5s ease;
+}
+
+.tip:hover span{
+    border-top:15px solid #2DCB70;
+    
+}
+.tip:hover{
+    position:absolute;
+    height:50px;
+    width:180px;
+    opacity:50px;
+    background:#2DCB70;
+    color:white;
+    font-size:25px;
+    padding:20px 0 0 54px;
+    top:150px;
+    left:810px;
+    border-radius:3px;
+}
+
+.button3{
+    width:86px;
+    height:19px;
+    padding:30px 35px 33px 71px;
+    border:2px solid rgba(255,255,255,0.8);
+    position:relative;
+    top:-298px;
+    left:355px;
+    font-family:"微软雅黑";
+    color:#2DCB70;
+    font-weight:bolder;
+    cursor:pointer;
+}
+
+.tu1{
+    height:100px;
+    width:100px;
+    background:url(image/cocktails.png) no-repeat center center;
+    position:relative;
+    top:-324px;
+    left:-491px;
+    transform:translate(-400px,0px);
+    transition:0.5s ease;
+    -moz-transition:0.5s ease;
+    -webkit-transition:0.5s ease;
+    -o-transition:0.5s ease;
+}
+.tu2{
+    height:100px;
+    width:100px;
+    background:url(image/cutlery.png) no-repeat center center;
+    position:relative;
+    top:-324px;
+    left:-491px;
+    transform:translate(-400px,0px);
+    transition:0.7s ease;
+    -moz-transition:0.7s ease;
+    -webkit-transition:0.7s ease;
+    -o-transition:0.7s ease;
+}
+.tu3{
+    height:100px;
+    width:100px;
+    background:url(image/pizza.png) no-repeat center center;
+    position:relative;
+    top:-324px;
+    left:-491px;
+    transform:translate(-400px,0px);
+    transition:0.9s ease;
+    -moz-transition:0.9s ease;
+    -webkit-transition:0.9s ease;
+    -o-transition:0.9s ease;
+}
+.tu4{
+    height:100px;
+    width:100px;
+    background:url(image/ice-cream.png) no-repeat center center;
+    position:relative;
+    top:-324px;
+    left:-491px;
+    transform:translate(-400px,0px);
+    transition:1.1s ease;
+    -moz-transition:1.1s ease;
+    -webkit-transition:1.1s ease;
+    -o-transition:1.1s ease;
+}
+
+.button3 span{
+    background:white;
+    display:block;
+    width:200px;
+    height:30px;
+    position:relative;
+    top:36px;
+    left:103px;
+    font-family:"微软雅黑";
+    color:#2DCB70;
+    font-weight:bolder;
+    text-align:center;
+    padding:8px 0px 0px 0px;
+    margin:0px 0px;
+}
+
+.button3:hover .tu1{
+    transform:translate(59px,0px);
+}
+.button3:hover .tu2{
+    transform:translate(59px,0px);
+}
+.button3:hover .tu3{
+    transform:translate(59px,0px);
+}
+.button3:hover .tu4{
+    transform:translate(59px,0px);
+}
+
+.button4{
+    width:400px;
+    height:400px;
+    position:relative;
+    top:-193px;
+    left:39%;
+    background:url(image/girl.jpg) no-repeat center center;
+    background-size:100%;
+    opacity:0.5; 
+    transition:0.5s ease;
+    -moz-transition:0.5s ease;
+    -webkit-transition:0.5s ease;
+    -o-transition:0.5s ease;
+
+}
+.t1{
+    opacity:0;
+    width:100px;
+    height:100px;
+    background-size:; 
+    transform:translate(0px,0px);
+    background:url(image/girl2.jpg) no-repeat center center;
+    transition:0.5s ease;
+    -moz-transition:0.5s ease;
+    -webkit-transition:0.5s ease;
+    -o-transition:0.5s ease;
+}
+.button4:hover{
+    opacity:1;
+    background-size:120%;
+}
+
+.button4:hover .t1{
+    opacity:1;
+    transform:translate(85px,85px);
+        width:250px;
+    height:250px;
+    
+}
+.boxx{
+    height:500px;
+    width:500px;
+    position:relative;
+    top:-44px;
+    margin:0 auto;
+    background:white;
+    box-shadow:0px 0px 15px #666;
+}
+.headerr{
+    width:100%;
+    height:11%;
+    background:#f0f0f0;
+    padding:16px 0px;
+    text-align:center;
+    font-weight:bold;   
+    border-bottom:1px solid #ccc;
+}
+.titlee{
+    color:#8b0000;
+    font-size:40px;
+    font-family:"Gigi";
+    text-align:center;
+}
+.buttonn{
+    font-family:serif;
+    font-size:30px;
+    cursor:pointer;
+    text-align:center;
+    height:;
+    width:;
+    color:#1abc9c;
+    text-decoration:none;
+}
+.btnn1{
+    margin:70px;
+}
+.btnn2{
+    margin:86px;
+}
+.bodyy{
+    margin:;
+}
+.bodyy table{
+    width:99.8%;
+    border-collapse:collapse;
+}
+.bodyy thead{
+    font-size:28px;
+    height:73px;
+    line-height:67px;
+    text-align:center;
+}
+.bodyy tbody tr th{
+    font-size:28px;
+    border:1px solid #f0f0f0;
+    text-align:center;
+    line-height:68px;
+    cursor:pointer;
+}
+#mask{
+    background:#000;
+    opacity:0.75;
+    height:1000px;
+    width:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:1000;
+    display:none;
+
+}
+#close{ 
+    background:url(http://img.mukewang.com/532c272100018d1600300030.jpg) no-repeat; 
+    width:30px;
+    height:30px; 
+    cursor:pointer; 
+    position:absolute;
+    right:8px; 
+    top:8px; 
+    text-indent:-999em;
+    display:none;
+}
+#login{
+    background-color:#f4c67d;
+    padding:0px 0px;
+    height:460px;
+    width:559px;
+    position:fixed;
+    z-index:1001;
+    margin:0 0 0 0;
+    display:none;
+    
+}
+#title{
+    height:50px;
+    width:559px;
+    cursor:move;
+    user-select:none;
+    background-color:#58bace;
+}
+#content{
+    margin:22px 27px;
+}
+#w1{
+    font-family:"微软雅黑";
+    font-size:20px;
+    margin:7px 171px;
+    top:0px;
+}
+#text1{
+    width:150px; 
+    height:30px;
+    margin:0px 0px 0px 171px;
+}
+#text2{
+    width:150px; 
+    height:30px;
+    margin:0px 0px 0px 171px;
+}
+#text3{
+    width:150px; 
+    height:30px;
+    margin:0px 0px 0px 171px;
+}
+#text4{
+    width:150px; 
+    height:30px;
+    margin:0px 0px 0px 171px;
+}
+#text5{
+    background-color:#58bace;
+    width:100px; 
+    height:37px;
+    margin:33px 0px 0px -8px;
+    cursor:pointer;
+}
+#text6{
+    background-color:#58bace;
+    width:100px; 
+    height:37px;
+    cursor:pointer;
+}
